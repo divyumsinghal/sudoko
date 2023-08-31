@@ -96,8 +96,15 @@ bool UsedInBox(int grid[N][N], int boxBeginRow, int boxBeginCol, int number)
 
 bool isGridSafe(int grid[N][N], int prow, int pcol, int number)
 {
-    return !UsedInRow(grid, prow, number) && !UsedInCol(grid, pcol, number) &&
-           !UsedInBox(grid, prow - prow % 3, pcol - pcol % 3, number);
+    for (int i = 0; i < N; i++)
+    {
+        if (grid[prow][i] == number || grid[i][pcol] == number ||
+            grid[prow - prow % 3 + i / 3][pcol - pcol % 3 + i % 3] == number)
+        {
+            return false;
+        }
+    }
+    return true;
 }
 
 void printResult(int finalgrid[N][N])
