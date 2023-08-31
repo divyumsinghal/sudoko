@@ -1,7 +1,6 @@
 #include <iostream>
-#include <cstdio>
-#include <cstring>
-#include <cstdlib>
+#include <array>
+
 using namespace std;
 
 #define empty 0
@@ -19,6 +18,7 @@ void inputSudoku(int grid[N][N]);
 int main()
 {
     int grid[N][N];
+
     inputSudoku(grid);
 
     if (SolveSudoku(grid))
