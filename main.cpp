@@ -1,5 +1,4 @@
 #include <iostream>
-#include <array>
 
 using namespace std;
 
@@ -9,9 +8,6 @@ using namespace std;
 bool isGridSafe(int grid[N][N], int row, int col, int num);
 bool isEmptyLocation(int grid[N][N], int &row, int &col);
 bool SolveSudoku(int grid[N][N]);
-bool UsedInRow(int grid[N][N], int prow, int number);
-bool UsedInCol(int grid[N][N], int pcol, int number);
-bool UsedInBox(int grid[N][N], int boxBeginRow, int boxBeginCol, int number);
 void printResult(int finalgrid[N][N]);
 void inputSudoku(int grid[N][N]);
 
@@ -69,30 +65,6 @@ bool isEmptyLocation(int grid[N][N], int &row, int &col)
     return false;
 }
 
-bool UsedInRow(int grid[N][N], int prow, int number)
-{
-    for (int col = 0; col < N; col++)
-        if (grid[prow][col] == number)
-            return true;
-    return false;
-}
-
-bool UsedInCol(int grid[N][N], int pcol, int number)
-{
-    for (int row = 0; row < N; row++)
-        if (grid[row][pcol] == number)
-            return true;
-    return false;
-}
-
-bool UsedInBox(int grid[N][N], int boxBeginRow, int boxBeginCol, int number)
-{
-    for (int row = 0; row < 3; row++)
-        for (int col = 0; col < 3; col++)
-            if (grid[row + boxBeginRow][col + boxBeginCol] == number)
-                return true;
-    return false;
-}
 
 bool isGridSafe(int grid[N][N], int prow, int pcol, int number)
 {

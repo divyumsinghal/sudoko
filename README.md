@@ -14,6 +14,8 @@ A Sudoku solver implemented in C++ that uses a backtracking algorithm to solve S
 
 This program is designed to solve Sudoku puzzles using a recursive backtracking algorithm. Sudoku is a number puzzle game played on a 9x9 grid. The goal is to fill the grid with digits from 1 to 9 such that each row, column, and 3x3 subgrid (box) contains all the digits without repetition.
 
+![img.png](img.png)
+
 ## Usage
 
 This Code can be used to solve a Sudoku Puzzle.
